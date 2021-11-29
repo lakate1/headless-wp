@@ -24,8 +24,10 @@ class App extends Component {
            {this.state.posts.map((posts) => (
                 <div className="card">
                    <div className="card-body">
-                       <h5 className="card-title">{posts.title.rendered}</h5>
+                       <h2 className="card-title">{posts.title.rendered}</h2>
+                       <h3 dangerouslySetInnerHTML = {{ __html: posts.excerpt.rendered }} ></h3>
                        <div dangerouslySetInnerHTML={{ __html: posts.content.rendered }} ></div>
+                       <h4>{posts.author}</h4>
                    </div>
                 </div>
             ))}
